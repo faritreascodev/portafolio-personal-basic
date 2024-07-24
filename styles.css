@@ -1,0 +1,326 @@
+/* Variables CSS */
+:root {
+    --primary-color: #1C1C1C; /* Color de fondo principal */
+    --secondary-color: #1f1f1f; /* Color de fondo secundario */
+    /* --accent-color: #bb86fc; */
+    --accent-color: #00BFAE; /* Color de acento */
+    --text-color: #e0e0e0; /* Color del texto */
+    --font-primary: 'Roboto', sans-serif; /* Tipografía principal */
+    --font-secondary: 'Open Sans', sans-serif; /* Tipografía secundaria */
+    --font-tertiary: 'Montserrat', sans-serif; /* Tipografía terciaria */
+    --transition-duration: 0.3s; /* Duración de las transiciones */
+}
+
+/* General Styles */
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--secondary-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#navbar {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+#navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-duration);
+}
+
+#navbar a:hover {
+    color: var(--accent-color);
+}
+
+/* Welcome Section Styles */
+
+#welcome-section {
+    position: relative; /* Asegura que los cubos se posicionen relativamente a esta sección */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(https://cdn.pixabay.com/photo/2017/08/10/08/47/laptop-2620118_1280.jpg) no-repeat center center;
+    background-size: cover;
+    color: var(--text-color);
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    padding-right: 0;
+}
+
+#welcome-section h1 {
+    font-family: var(--font-tertiary);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+}
+
+#welcome-section p {
+    font-size: 1.5rem;
+    animation: fadeInUp 2s ease-out;
+    position: sticky;
+    z-index: 1;
+}
+
+/* Hero Section Styles */
+.hero {
+    position: absolute; /* Posición absoluta dentro de #welcome-section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite que el contenido debajo sea clickeable */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cube {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(111, 117, 116, 0.8); /* Color acorde con el diseño, semi-transparente */
+    border-radius: 10px; /* Añade bordes redondeados a los cubos */
+    animation: float 6s ease-in-out infinite, glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Posiciones y retrasos de los cubos */
+.cube:nth-child(1) {
+    animation-delay: 2s;
+    left: 10%;
+    top: 20%;
+}
+
+.cube:nth-child(2) {
+    animation-delay: 2.5s;
+    left: 30%;
+    top: 10%;
+}
+
+.cube:nth-child(3) {
+    animation-delay: 3s;
+    left: 50%;
+    top: 50%;
+}
+
+.cube:nth-child(4) {
+    animation-delay: 3.5s;
+    left: 70%;
+    top: 40%;
+}
+
+.cube:nth-child(5) {
+    animation-delay: 4s;
+    left: 90%;
+    top: 60%;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Glowing Effect Animation */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(228, 233, 233, 0.5);
+        opacity: 0;
+    }
+    to {
+        box-shadow: 0 0 10px rgba(228, 233, 233, 0.5);
+    }
+}
+
+/* About Me Section Styles */
+#about-me {
+    padding: 4rem 2rem;
+    background-color: var(--secondary-color);
+}
+
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+}
+
+.about-me-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-me-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.about-me-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-me-text li {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.about-me-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Section Styles */
+#projects {
+    padding: 4rem 2rem;
+    background-color: var(--primary-color);
+}
+
+.project-tile {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.project-tile h3 {
+    margin-bottom: 1rem;
+}
+
+.project-tile a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-duration);
+}
+
+.project-tile a:hover {
+    color: #fff;
+}
+
+/* Contact Section Styles */
+
+.tech-icons{
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: 2rem 0;
+    height: 50px;;
+}
+
+#profile-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-duration);
+}
+
+#profile-link:hover {
+    color: #fff;
+}
+/* Footer Styles */
+.footer-section {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    text-align: center;
+}
+
+.wrap-footer-section ul, .wrap-menu-footer-section {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+
+.wrap-footer-section .social-logo {
+    width: 30px;
+    height: 30px;
+    transition: transform var(--transition-duration);
+}
+
+.wrap-footer-section .social-logo:hover {
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-title {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.animate-text {
+    animation: fadeInUp 2s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-me-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #navbar ul {
+        flex-direction: column;
+    }
+}
