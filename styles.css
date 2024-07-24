@@ -444,7 +444,12 @@ body {
 }
 
 .footer-creds {
-    font-size: 0.875rem;
+    font-size: 1rem;
+}
+
+.profile-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* Animations */
