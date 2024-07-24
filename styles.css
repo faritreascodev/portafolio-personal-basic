@@ -1,22 +1,13 @@
-/* Variables CSS */
+/* the variables */
 :root {
     --primary-color: #1C1C1C;
-    /* Color de fondo principal */
     --secondary-color: #1f1f1f;
-    /* Color de fondo secundario */
-    /* --accent-color: #bb86fc; */
     --accent-color: #00BFAE;
-    /* Color de acento */
     --text-color: #e0e0e0;
-    /* Color del texto */
     --font-primary: 'Roboto', sans-serif;
-    /* Tipografía principal */
     --font-secondary: 'Open Sans', sans-serif;
-    /* Tipografía secundaria */
     --font-tertiary: 'Montserrat', sans-serif;
-    /* Tipografía terciaria */
     --transition-duration: 0.3s;
-    /* Duración de las transiciones */
 }
 
 /* General Styles */
@@ -27,6 +18,7 @@ body {
     background-color: var(--primary-color);
     color: var(--text-color);
     box-sizing: border-box;
+    overflow-x: hidden; /* Añadido aquí */
 }
 
 /* Header Styles */
@@ -64,7 +56,6 @@ body {
 }
 
 /* Welcome Section Styles */
-
 #welcome-section {
     position: relative;
     /* Asegura que los cubos se posicionen relativamente a esta sección */
@@ -183,7 +174,6 @@ body {
 }
 
 /* About Me Section Styles */
-
 #about-me {
     padding: 4rem 2rem;
 }
@@ -211,10 +201,15 @@ body {
 /* Container Styles */
 .about-me-container {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    text-align: justify;
+    flex-direction: row;
+    justify-content: center; /* Alinea horizontalmente al centro */
+    align-items: center; /* Alinea verticalmente al centro */
+    padding: 2rem;
+    background-color: #413f3f;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(225, 223, 223, 0.1);
+    transition: box-shadow var(--transition-duration);
+    overflow: hidden;
 }
 
 .about-me-text {
@@ -253,10 +248,13 @@ body {
 
 /* Image Styles */
 .about-me-image img {
+    /* width: 100%; */
     max-width: 300px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    margin-right: 3rem;
 }
 
 /* Project Section Styles */
@@ -315,7 +313,6 @@ body {
 }
 
 /* Contact Section Styles */
-
 #technologies {
     padding: 4rem 2rem;
     background-color: var(--primary-color);
@@ -450,7 +447,6 @@ body {
     font-size: 0.875rem;
 }
 
-
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -474,12 +470,31 @@ body {
     }
 }
 
-.animate-title {
+.animate-title{
     animation: fadeInUp 1.5s ease-out;
+    color: transparent;
+    background-image: linear-gradient(to left, #FFD700, #7B68EE, #3498db, #2ecc71, #FFD700);    
+    background-clip: text;
+    animation: color 3s linear infinite;
+    background-size: 500%;
+}
+
+@keyframes color {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
+    }
 }
 
 .animate-text {
     animation: fadeInUp 2s ease-out;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Responsive Design */
